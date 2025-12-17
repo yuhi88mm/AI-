@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AIセルフ診断×行動処方テンプレ｜1日1時間で仕組み化する「知的自動販売機」</title>
+
+  <!-- SEO -->
+  <meta name="description" content="AIセルフ診断で悩みを言語化し、行動1歩まで自動で提案。自宅で1日1時間から作れる、10年以上続く知的インフラ型ビジネスの作り方。日本語・英語対応。GitHub Pagesで公開OK。" />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AIセルフ診断×行動処方テンプレ｜知的自動販売機の作り方" />
+  <meta property="og:description" content="悩みを診断→整理→行動1歩へ。AIがほぼ自動で回す仕組みを公開。日本・海外対応、10年以上継続。" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/ogp.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AIセルフ診断×行動処方テンプレ｜知的自動販売機の作り方" />
+  <meta name="twitter:description" content="AIで悩みを診断→整理→行動1歩へ。1日1時間で仕組み化。" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AIセルフ診断×行動処方テンプレ｜知的自動販売機",
+    "url": "https://example.com/",
+    "description": "AIセルフ診断で悩みを言語化し、行動1歩まで自動提案する仕組み。自宅で1日1時間から作れる、10年以上続く知的インフラ型ビジネス。",
+    "inLanguage": ["ja", "en"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://example.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#111a33;
+      --panel2:#0f1730;
+      --text:#e9ecf5;
+      --muted:#b8c0d8;
+      --accent:#7c5cff;
+      --accent2:#00d4ff;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1080px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(800px 450px at 85% 20%, rgba(0,212,255,.18), transparent 60%),
+        linear-gradient(180deg, #070a14 0%, var(--bg) 60%, #070a14 100%);
+      line-height:1.7;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px;}
+    header{
+      position:sticky; top:0;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,20,.55);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex; align-items:center; gap:14px; justify-content:space-between;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px;
+    }
+    .badge{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: var(--shadow);
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      margin-left:14px;
+      font-size:14px;
+    }
+    .nav a:hover{color:var(--text)}
+    .hero{
+      padding:46px 0 26px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding-top:28px;}
+      .nav-right{display:none;}
+    }
+    h1{
+      font-size: clamp(28px, 4vw, 44px);
+      line-height:1.15;
+      margin:0 0 12px;
+      letter-spacing:-.5px;
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 16px;
+      margin:0 0 18px;
+      max-width: 60ch;
+    }
+    .kws{
+      display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 22px;
+    }
+    .pill{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      padding:8px 12px;
+      border-radius: 999px;
+      color:var(--muted);
+      font-weight:600;
+      font-size:13px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;
+    }
+    .btn{
+      appearance:none; border:0;
+      padding:12px 14px;
+      border-radius: 14px;
+      font-weight:800;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:10px;
+      box-shadow: var(--shadow);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#071020;
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow:none;
+    }
+    .btn.small{padding:10px 12px; border-radius:12px; font-weight:800;}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr;}
+    }
+    h2{margin:26px 0 10px; font-size:22px;}
+    h3{margin:14px 0 6px; font-size:16px;}
+    .muted{color:var(--muted)}
+    .list{margin:10px 0 0; padding-left:18px;}
+    .list li{margin:6px 0;}
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){.split{grid-template-columns:1fr;}}
+    .hr{
+      height:1px; background: var(--border);
+      margin:22px 0;
+    }
+    .mini{
+      font-size:12px; color:var(--muted);
+    }
+    footer{
+      margin-top:40px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .lang-toggle{
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+    .lang-toggle .btn{box-shadow:none;}
+    .hidden{display:none;}
+    .formrow{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+    input, select, textarea{
+      width:100%;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      padding:12px 12px;
+      border-radius: 14px;
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical;}
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    @media (max-width: 700px){.two{grid-template-columns:1fr;}}
+    .result{
+      white-space:pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 13px;
+      color: #eaf6ff;
+      background: rgba(0,0,0,.25);
+      border: 1px dashed rgba(255,255,255,.18);
+      padding: 12px;
+      border-radius: 14px;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav" role="navigation" aria-label="Main navigation">
+    <div class="brand">
+      <div class="badge" aria-hidden="true"></div>
+      <div>AIセルフ診断 × 行動処方テンプレ</div>
+    </div>
+    <div class="nav-right">
+      <a href="#what">概要</a>
+      <a href="#how">作り方</a>
+      <a href="#pricing">収益モデル</a>
+      <a href="#note">note販売</a>
+      <a href="#demo">ミニ診断</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1>悩みを「診断 → 整理 → 行動1歩」へ。<br/>AIがほぼ自動で回す“知的自動販売機”</h1>
+      <p class="sub">
+        自宅で1日1時間。日本でも海外でも運用できる、10年以上続く知的インフラ型ビジネス。
+        AIセルフ診断と行動処方テンプレで、<strong>人の役に立ちながら</strong>収益化する方法をまとめました。
+      </p>
+
+      <div class="kws" aria-label="keywords">
+        <span class="pill">AIセルフ診断</span>
+        <span class="pill">行動処方テンプレ</span>
+        <span class="pill">自動化</span>
+        <span class="pill">note 5万円</span>
+        <span class="pill">GitHub Pages</span>
+        <span class="pill">英語対応</span>
+        <span class="pill">10年以上継続</span>
+        <span class="pill">在宅1時間</span>
+      </div>
+
+      <div class="cta">
+        <a class="btn primary" href="#note" aria-label="note販売ページへ">noteの5万円記事で「作り方」を販売する</a>
+        <a class="btn ghost" href="#demo" aria-label="ミニ診断へ">ミニ診断を試す</a>
+      </div>
+
+      <p class="mini" style="margin-top:10px;">
+        ※このページはテンプレとして利用可能です。リンク（note / Stripe / BASEなど）を差し替えて運用してください。
+      </p>
+    </div>
+
+    <aside class="card" aria-label="quick summary">
+      <h3>この仕組みでできること</h3>
+      <ul class="list">
+        <li>悩みを短時間で言語化（入力 → AIが整理）</li>
+        <li>今日やる「行動1歩」を提案（実行しやすい）</li>
+        <li>テンプレ・教材へ自然に誘導（売り込み感を減らす）</li>
+        <li>日本語→英語へ展開（海外にも対応）</li>
+      </ul>
+      <div class="hr"></div>
+      <h3>こんな人におすすめ</h3>
+      <ul class="list">
+        <li>発信はできるが、収益が安定しない</li>
+        <li>AIで仕組み化したい（毎日時間がない）</li>
+        <li>人の役に立つコンテンツを長期で育てたい</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section id="what" class="card">
+    <h2>AIセルフ診断 × 行動処方テンプレとは？</h2>
+    <p class="muted">
+      「情報を渡す」だけではなく、<strong>悩みを整理し、次に何をすべきか</strong>まで導く仕組みです。
+      診断（入力フォーム）→ AIの要約 → 行動処方（テンプレ）→ 有料コンテンツへ誘導、という流れを自動で回します。
+    </p>
+
+    <div class="grid">
+      <div class="card" style="background:rgba(255,255,255,.03)">
+        <h3>① 診断（Self Assessment）</h3>
+        <p class="muted">10問程度の質問で状況を把握。答えるだけでOK。</p>
+      </div>
+      <div class="card" style="background:rgba(255,255,255,.03)">
+        <h3>② 整理（Clarity）</h3>
+        <p class="muted">AIが悩みの核心を短く要約し、迷いを減らす。</p>
+      </div>
+      <div class="card" style="background:rgba(255,255,255,.03)">
+        <h3>③ 行動1歩（Next Step）</h3>
+        <p class="muted">「今日できる1つ」に落として、継続しやすくする。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="card" style="margin-top:14px;">
+    <h2>作り方（最小ステップ）</h2>
+    <div class="split">
+      <div>
+        <h3>ステップ1：テーマを絞る</h3>
+        <ul class="list">
+          <li>仕事・お金・生き方</li>
+          <li>メンタル・セルフケア</li>
+          <li>AI活用・副業・創作</li>
+        </ul>
+        <p class="mini">ポイント：10年続く悩み（普遍）に寄せる。</p>
+      </div>
+      <div>
+        <h3>ステップ2：質問を10個作る</h3>
+        <ul class="list">
+          <li>「今困っていること」</li>
+          <li>「時間・お金・体力の制約」</li>
+          <li>「理想の状態」</li>
+          <li>「今日できること」</li>
+        </ul>
+        <p class="mini">ポイント：結果を「行動」へ繋げる質問にする。</p>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="split">
+      <div>
+        <h3>ステップ3：AIの出力テンプレを作る</h3>
+        <ul class="list">
+          <li>要約（いまの状況）</li>
+          <li>本質（詰まりポイント）</li>
+          <li>提案（行動1歩）</li>
+          <li>禁忌（やらないこと）</li>
+          <li>次の学び（誘導）</li>
+        </ul>
+      </div>
+      <div>
+        <h3>ステップ4：自動化（低コストでOK）</h3>
+        <ul class="list">
+          <li>Googleフォーム / Notionフォームで入力</li>
+          <li>Make / ZapierでAIと連携</li>
+          <li>結果をメール or ページで返す</li>
+          <li>有料テンプレ・noteへ自然誘導</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="card" style="margin-top:14px;">
+    <h2>収益モデル（例）</h2>
+    <p class="muted">「低単価×自動」＋「高単価×仕組み販売」で月100万円に近づけます。</p>
+
+    <div class="grid">
+      <div class="card" style="background:rgba(255,255,255,.03)">
+        <h3>① 診断 → 低単価</h3>
+        <p class="muted">診断結果＋行動テンプレ（¥1,000〜¥5,000）</p>
+        <p class="mini">例：月100件 × ¥3,000 = ¥300,000</p>
+      </div>
+      <div class="card" style="background:rgba(255,255,255,.03)">
+        <h3>② テンプレ販売</h3>
+        <p class="muted">プロンプト、チェックリスト、行動シート</p>
+        <p class="mini">例：月100件 × ¥5,000 = ¥500,000</p>
+      </div>
+      <div class="card" style="background:rgba(255,255,255,.03)">
+        <h3>③ note（¥50,000）</h3>
+        <p class="muted">「仕組みそのものの作り方」を販売</p>
+        <p class="mini">例：月20件 × ¥50,000 = ¥1,000,000</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="note" class="card" style="margin-top:14px;">
+    <h2>note（5万円）で売る「作り方」</h2>
+    <p class="muted">
+      高単価で売れる理由は、<strong>手順</strong>ではなく<strong>設計</strong>と<strong>テンプレ</strong>に価値があるからです。
+      そのまま真似できる形（プロンプト、質問、導線、英語版）で渡すのがコツ。
+    </p>
+
+    <div class="split">
+      <div>
+        <h3>記事の目次（例）</h3>
+        <ol class="list">
+          <li>なぜ10年続くのか（普遍ニーズ）</li>
+          <li>テーマ選定（刺さる領域の決め方）</li>
+          <li>診断質問テンプレ（日本語/英語）</li>
+          <li>AIプロンプト完全公開</li>
+          <li>自動化の構成図（無料ツール中心）</li>
+          <li>収益導線テンプレ（売り込み感を減らす）</li>
+          <li>海外展開（翻訳・文化調整）</li>
+          <li>失敗パターンと回避策</li>
+        </ol>
+      </div>
+      <div>
+        <h3>リンク差し替え（あなた用）</h3>
+        <p class="mini">以下のボタンURLを「あなたのnote記事URL」に置き換えてください。</p>
+        <div class="cta">
+          <a class="btn primary" id="noteLink" href="https://note.com/your-note-url" target="_blank" rel="noopener">note記事を購入する（¥50,000）</a>
+          <a class="btn ghost" href="#demo">無料ミニ診断を読む</a>
+        </div>
+        <p class="mini" style="margin-top:10px;">
+          海外向けは Stripe の決済リンクや Gumroad などにも転用できます（このページは静的サイト向け）。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" class="card" style="margin-top:14px;">
+    <div class="formrow" style="justify-content:space-between;">
+      <h2 style="margin:0;">ミニ診断（ページ内デモ）</h2>
+      <div class="lang-toggle" aria-label="language toggle">
+        <button class="btn ghost small" onclick="setLang('ja')">日本語</button>
+        <button class="btn ghost small" onclick="setLang('en')">English</button>
+      </div>
+    </div>
+    <p class="muted" id="demoLeadJa">
+      入力は保存されません（ブラウザ内でのみ処理）。実運用ではフォーム＋自動返信に置き換えます。
+    </p>
+    <p class="muted hidden" id="demoLeadEn">
+      Your input is not saved (processed only in your browser). For real operation, replace this with a form + automated reply.
+    </p>
+
+    <div class="two" style="margin-top:10px;">
+      <div>
+        <label class="mini" for="topic">テーマ</label>
+        <select id="topic">
+          <option value="work">仕事・お金・生き方</option>
+          <option value="mental">メンタル・セルフケア</option>
+          <option value="ai">AI活用・副業・創作</option>
+        </select>
+      </div>
+      <div>
+        <label class="mini" for="constraint">制約（時間/体力/お金）</label>
+        <input id="constraint" placeholder="例：1日1時間 / 予算月5万円 / 体力少なめ" />
+      </div>
+    </div>
+
+    <div style="margin-top:10px;">
+      <label class="mini" for="problem">いま一番困っていること</label>
+      <textarea id="problem" placeholder="例：発信はしているが、収益が安定しない。何を売るべきか迷っている。"></textarea>
+    </div>
+
+    <div class="cta">
+      <button class="btn primary" onclick="runDemo()">診断結果を作る</button>
+      <button class="btn ghost" onclick="copyResult()">結果をコピー</button>
+    </div>
+
+    <div class="hr"></div>
+    <h3 style="margin-top:0;">結果（サンプル）</h3>
+    <div id="result" class="result">ここに結果が表示されます。</div>
+
+    <p class="mini" style="margin-top:10px;">
+      ※このデモは「考え方の例」です。実運用は、AI（ChatGPT/Claudeなど）で文章の質を上げ、メール返信・PDF・会員ページへ連携します。
+    </p>
+  </section>
+
+  <section id="faq" class="card" style="margin-top:14px;">
+    <h2>FAQ</h2>
+
+    <h3>Q. 1日1時間で本当に回せますか？</h3>
+    <p class="muted">初期構築（質問・テンプレ・導線）に集中すれば、運用は「改善と発信」だけにできます。日次はチェック＋微調整でOK。</p>
+
+    <h3>Q. AIだけで“役に立つ”内容になりますか？</h3>
+    <p class="muted">重要なのはAIではなく「設計」です。質問設計と出力テンプレ（行動1歩）を工夫すると、満足度が上がります。</p>
+
+    <h3>Q. 海外対応は難しくない？</h3>
+    <p class="muted">英語版は「同じ構造」で作れます。翻訳だけでなく、例文や表現を現地向けに微調整すると反応が上がります。</p>
+  </section>
+
+  <footer>
+    <div class="hr"></div>
+    <p><strong>SEO用キーワード例</strong>：AI診断 / セルフ診断 / 行動テンプレ / 自動化 / note 5万円 / 在宅 副業 / 仕組み化 / 英語対応 / GitHub Pages</p>
+    <p class="mini">© <span id="year"></span> AI Self Assessment & Action Templates. All rights reserved.</p>
+  </footer>
+</main>
+
+<script>
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // language toggle (simple)
+  function setLang(lang){
+    const ja = (lang === 'ja');
+    document.documentElement.lang = lang;
+    document.getElementById('demoLeadJa').classList.toggle('hidden', !ja);
+    document.getElementById('demoLeadEn').classList.toggle('hidden', ja);
+  }
+
+  // mini demo (non-AI, deterministic sample)
+  function runDemo(){
+    const topic = document.getElementById('topic').value;
+    const constraint = (document.getElementById('constraint').value || '').trim();
+    const problem = (document.getElementById('problem').value || '').trim();
+
+    const topicMap = {
+      work: "仕事・お金・生き方",
+      mental: "メンタル・セルフケア",
+      ai: "AI活用・副業・創作"
+    };
+
+    const core = problem ? summarize(problem) : "（未入力）あなたがいま感じている課題がまだ言語化できていない可能性があります。";
+    const bottleneck = inferBottleneck(problem, topic);
+    const nextStep = makeNextStep(problem, topic);
+    const avoid = makeAvoid(topic);
+
+    const out =
+`【テーマ】${topicMap[topic]}
+【制約】${constraint || "未入力（例：1日1時間 / 予算月5万円）"}
+
+■ いまの状況（要約）
+- ${core}
+
+■ 詰まりポイント（本質）
+- ${bottleneck}
+
+■ 今日やる「行動1歩」
+- ${nextStep}
+
+■ やらないこと（禁忌）
+- ${avoid}
+
+■ 次の学び（おすすめ）
+- 「診断 → 整理 → 行動テンプレ」型の設計にすると、自動化と収益導線が組めます。
+- 詳しい作り方は note（¥50,000）でテンプレごと公開しています。`;
+
+    document.getElementById('result').textContent = out;
+  }
+
+  function summarize(text){
+    // naive: first sentence-ish
+    const t = text.replace(/\\s+/g,' ').trim();
+    if(t.length <= 80) return t;
+    return t.slice(0, 80) + "…";
+  }
+
+  function inferBottleneck(problem, topic){
+    const p = (problem || "").toLowerCase();
+    if(p.includes("収益") || p.includes("売れ") || p.includes("マネタイズ")){
+      return "売るもの（提供価値）が“説明”になっていて、相手の状況整理→行動提案まで落ちていない。";
+    }
+    if(topic === "mental"){
+      return "休む/動くの判断軸が曖昧で、回復の順番（環境→身体→思考）が逆になっている。";
+    }
+    if(topic === "ai"){
+      return "ツール選びが先で、対象（誰のどんな悩み）と出力（何を渡すか）が未固定。";
+    }
+    return "課題が大きすぎて、今日の一歩に分解できていない。";
+  }
+
+  function makeNextStep(problem, topic){
+    if(topic === "work"){
+      return "「誰のどんな悩みを、3行で言語化できるか」を1つだけ決め、診断質問を10問メモする。";
+    }
+    if(topic === "mental"){
+      return "今日の体調を10点満点で記録し、睡眠・食事・歩行のうち1つだけ改善アクションを決める。";
+    }
+    return "「診断結果の出力テンプレ」を作る（要約/本質/行動1歩/禁忌/次の学びの5項目）。";
+  }
+
+  function makeAvoid(topic){
+    if(topic === "work"){
+      return "完璧な商品作りに時間を使いすぎる（まずは診断テンプレで小さく検証）。";
+    }
+    if(topic === "mental"){
+      return "気合で乗り切ろうとする（回復は仕組みで作る）。";
+    }
+    return "新しいAIツールを次々試す（成果物が増えない）。";
+  }
+
+  async function copyResult(){
+    const text = document.getElementById('result').textContent;
+    try{
+      await navigator.clipboard.writeText(text);
+      alert("結果をコピーしました！");
+    }catch(e){
+      alert("コピーに失敗しました。手動で選択してコピーしてください。");
+    }
+  }
+</script>
+</body>
+</html>
